@@ -1,5 +1,12 @@
 ## Sales Insights Data Analysis Project:
-   An automated dashboard providing quick & latest sales insights in order to support data-driven decision-making.
+ An automated dashboard providing quick & latest sales insights in order to support data-driven decision-making.
+
+## Purpose : 
+ To unlock sales insights that are not visible before for the sales team for decision support and automate them to reduce manual time spent on data furthering.
+
+## Result :  
+ An automated dashboard providing quick and latest sales insights in order to support data-driven decision-making.
+   
 
 ### Data Analysis Using SQL
 
@@ -29,7 +36,7 @@
 
 7. Show total revenue in year 2020,
 
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and 				transactions.currency="INR\r" or transactions.currency="USD\r";`
+    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";`
 	
 8. Show total revenue in year 2020, January Month,
 
@@ -41,17 +48,21 @@
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
 	and transactions.market_code="Mark001";`
 10. total Revenue
+    
  	`select sum(sales_amount) from transactions;`
 
-11. total sales quantity
+12. total sales quantity
+    
 	`select sum(sales_qty) from transactions;`
 
-12.Revenue by market
+12. Revenue by market
+
  `select sum(transactions.sales_amount),markets.markets_name from transactions inner join markets
  on transactions.market_code=markets.markets_code group by markets.markets_name
  order by sum(transactions.sales_amount) desc;`
  
  13. sales_quanlity by markets
+     
  `select sum(transactions.sales_qty),markets.markets_name from transactions inner join markets
  on transactions.market_code=markets.markets_code group by markets.markets_name
  order by sum(transactions.sales_qty) desc;`
