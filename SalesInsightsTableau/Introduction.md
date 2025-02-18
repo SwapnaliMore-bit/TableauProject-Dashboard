@@ -41,26 +41,20 @@
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
 	and transactions.market_code="Mark001";`
 10. total Revenue
- select sum(sales_amount) from transactions;
+ 	`select sum(sales_amount) from transactions;`
 
 11. total sales quantity
-select sum(sales_qty) from transactions;
+	`select sum(sales_qty) from transactions;`
 
 12.Revenue by market
- 
- select sum(transactions.sales_amount),markets.markets_name from transactions
- inner join markets
- on transactions.market_code=markets.markets_code
- group by markets.markets_name
- order by sum(transactions.sales_amount) desc;
+ `select sum(transactions.sales_amount),markets.markets_name from transactions inner join markets
+ on transactions.market_code=markets.markets_code group by markets.markets_name
+ order by sum(transactions.sales_amount) desc;`
  
  13. sales_quanlity by markets
- 
- select sum(transactions.sales_qty),markets.markets_name from transactions
- inner join markets
- on transactions.market_code=markets.markets_code
- group by markets.markets_name
- order by sum(transactions.sales_qty) desc;
+ `select sum(transactions.sales_qty),markets.markets_name from transactions inner join markets
+ on transactions.market_code=markets.markets_code group by markets.markets_name
+ order by sum(transactions.sales_qty) desc;`
   
   
 
